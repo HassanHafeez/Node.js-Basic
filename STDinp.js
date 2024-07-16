@@ -13,7 +13,7 @@ const questions = [
 const answer = []; //This empty array is intended to store the user's answers.
 
 const Ask=(i=0)=>{
-    process.stdout.write(`\n\n ${questions[i]}.`)
+    process.stdout.write(`\n${questions[i]}.`)
     process.stdout.write(`> `)
 };
 
@@ -32,4 +32,10 @@ process.stdin.on("data",(data)=>{
     }else{
      process.exit();
     }
+})
+
+//Printing all Results
+process.on("exit",()=>{
+    process.stdout.write("----------\n\n--------")
+    process.stdout.write(`\nAnswer are: \n Name: ${answer[0]}, Gender: ${answer[1]}, Location: ${answer[2]}.`)
 })
